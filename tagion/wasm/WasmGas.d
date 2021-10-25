@@ -19,7 +19,7 @@ import std.format;
 struct WasmGas {
     enum set_gas_gauge = "$set_gas_gauge";
     enum read_gas_gauge = "$read_gas_gauge";
-    protected WasmWriter writer;
+     WasmWriter writer; // protected
 
     this(ref WasmWriter writer) {
         this.writer = writer;
@@ -46,7 +46,7 @@ struct WasmGas {
         enum SectionId = WasmWriter.fromSecType!SecType;
         if (writer.mod[SectionId] is null) {
             idx = 0;
-            writer.mod[SectionId] = new WasmWriter.WasmSection.SectionT!SecType;
+            writer.mod[SectionId] = new WasmWriter.WasmSection.SectionT!SecType;  //LOOOK here // TODO
             writer.mod[SectionId].sectypes = [sectype];
         }
         else {

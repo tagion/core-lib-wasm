@@ -48,6 +48,10 @@ import tagion.wasm.WasmException;
         reader(loader);
     }
 
+    this() {
+        // Empty
+    }
+
     static WasmWriter opCall(ref const(WasmReader) reader) {
         return new WasmWriter(reader);
     }

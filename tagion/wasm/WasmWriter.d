@@ -618,7 +618,7 @@ import tagion.wasm.WasmException;
             this(ref ConstOf!(ReaderStartType) s) {
                 idx = s.idx;
             }
-
+            this(){}
             mixin Serialize;
         }
 
